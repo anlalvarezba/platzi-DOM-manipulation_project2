@@ -36,6 +36,25 @@ const mountNode = document.getElementById("images");
 const addButton = document.querySelector('#agregar');
 const limpiarButton = document.querySelector('#limpiar');
 
+
+addButton.className = "p-4 w-32 bg-indigo-400 rounded-full mx-3 hover:bg-blue-300 active:bg-blue-800";
+limpiarButton.className = "p-4 w-32 bg-indigo-400 rounded-full mx-3 hover:bg-blue-300 active:bg-blue-800";
+addButton.style.color = "white";
+limpiarButton.style.color = "white";
+addButton.style.outline = "none";
+limpiarButton.style.outline = "none";
+addButton.style.display = "block";
+addButton.style.width = "150px";
+addButton.style.margin = "10px auto";
+limpiarButton.style.display = "block";
+limpiarButton.style.width = "150px";
+limpiarButton.style.margin = "10px auto";
+
+
+
+
+
+
 const addImage = () => {
     const newImage = createImagenNode();
     mountNode.append(newImage);
