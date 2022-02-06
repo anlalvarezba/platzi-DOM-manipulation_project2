@@ -10,7 +10,7 @@ const random = () => Math.floor(Math.random()*(maximun - minimum)) + minimum;
 
 const createImagenNode = () => {
     const container = document.createElement("div");
-    container.className = "p-4";
+    container.className = "div1 p-4";
 
     const imagen = document.createElement("img");
     imagen.className = "mx-auto";
@@ -33,7 +33,9 @@ const createImagenNode = () => {
 
 const mountNode = document.getElementById("images");
 
-const addButton = document.querySelector('button');
+const addButton = document.querySelector('#agregar');
+const limpiarButton = document.querySelector('#limpiar');
+
 const addImage = () => {
     const newImage = createImagenNode();
     mountNode.append(newImage);
@@ -41,3 +43,16 @@ const addImage = () => {
 };
 
 addButton.addEventListener('click', addImage);
+
+
+
+limpiarButton.addEventListener('click', removeImages);
+
+function removeImages(){
+    const allImages = document.getElementsByClassName('div1');
+    const arrayImages = Array.from(allImages);
+    arrayImages.forEach( item =>{
+        const parent = item.parentNode;
+        parent.removeChild(item);
+    });
+}
