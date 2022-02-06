@@ -16,8 +16,18 @@ const createImagenNode = () => {
     imagen.className = "mx-auto";
     imagen.width = "320";
     imagen.dataset.src = `https://randomfox.ca/images/${random()}.jpg`;
+ 
+    const paper = document.createElement("div");
+    paper.className = "bg-gray-300";
+    paper.style.maxWidth = "320px";
+    paper.style.minHeight = "150px";
+    paper.style.display = "inline-block";
 
-    container.appendChild(imagen);
+    
+    paper.appendChild(imagen);
+    container.appendChild(paper);
+    
+    // container.appendChild(imagen);
     return container;
 }
 
