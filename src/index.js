@@ -3,6 +3,7 @@
  * When you're ready to start on your site, clear the file. Happy hacking!
  **/
 import { registerImage } from "./lazy";
+import { showCount } from "./lazy";
 
 const minimum = 1; 
 const maximun = 123;
@@ -27,7 +28,6 @@ const createImagenNode = () => {
     paper.appendChild(imagen);
     container.appendChild(paper);
     
-    // container.appendChild(imagen);
     return container;
 }
 
@@ -51,21 +51,24 @@ limpiarButton.style.width = "150px";
 limpiarButton.style.margin = "10px auto";
 
 
-
-
-
+export var count;
+count = 0;
 
 const addImage = () => {
     const newImage = createImagenNode();
     mountNode.append(newImage);
+
+    count++;
     registerImage(newImage);
+    cleaned = false;
 };
 
 addButton.addEventListener('click', addImage);
 
 
-
 limpiarButton.addEventListener('click', removeImages);
+
+
 
 function removeImages(){
     const allImages = document.getElementsByClassName('div1');
@@ -74,4 +77,9 @@ function removeImages(){
         const parent = item.parentNode;
         parent.removeChild(item);
     });
+    count = 0; 
+    cleaned = true;
+    showCount(count, 0, cleaned);
 }
+
+export var cleaned;
