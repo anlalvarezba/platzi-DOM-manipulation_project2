@@ -1,5 +1,5 @@
 {
-  "homepage": "",
+  "homepage": "https://anlalvarezba.github.io/platzi-DOM-manipulation_project2",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
